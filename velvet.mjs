@@ -1,7 +1,7 @@
 export const artes = [
   {
     "Arte Name": "Slicing Foot\n鋭武\nEimu",
-    "Elemental Attributes": "Non‑Elemental",
+    "Elemental Attributes": "Non-Elemental",
     "Additional Effects": "Stun (40)",
     "Enemy Race": "-",
     "Base Power": 100,
@@ -23,7 +23,7 @@ export const artes = [
   },
   {
     "Arte Name": "Gouging Spin\n円抉\nEnketsu",
-    "Elemental Attributes": "Non‑Elemental",
+    "Elemental Attributes": "Non-Elemental",
     "Additional Effects": "Stun (60)",
     "Enemy Race": "Crustacean",
     "Base Power": 125,
@@ -67,7 +67,7 @@ export const artes = [
   },
   {
     "Arte Name": "Harsh Rebuttal\n説破\nSeppa",
-    "Elemental Attributes": "Non‑Elemental",
+    "Elemental Attributes": "Non-Elemental",
     "Additional Effects": "Stun (60)",
     "Enemy Race": "Demihuman",
     "Base Power": 200,
@@ -111,7 +111,7 @@ export const artes = [
   },
   {
     "Arte Name": "Rising Moon\n真月\nShingetsu",
-    "Elemental Attributes": "Non‑Elemental",
+    "Elemental Attributes": "Non-Elemental",
     "Additional Effects": "Paralysis (7%)",
     "Enemy Race": "-",
     "Base Power": 170,
@@ -268,7 +268,7 @@ export const hiddenArtes = [
   },
   {
     "Arte Name": "Defiant Conviction\n無律排反\nMuritsuhahan",
-    "Elemental Attributes": "Non‑Elemental",
+    "Elemental Attributes": "Non-Elemental",
     "Additional Effects": "Paralysis (9%)",
     "Enemy Race": "Person",
     "Base Power": 600,

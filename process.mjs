@@ -1,6 +1,26 @@
 import { artes, hiddenArtes } from "./velvet";
 import { argv } from "process";
 
+const validNames = [
+  "amorphous",
+  "apodous",
+  "armored",
+  "beast",
+  "crustacean",
+  "demihuman",
+  "dragon",
+  "earth",
+  "fiend",
+  "fire",
+  "non‑elemental",
+  "non-elemental",
+  "person",
+  "undead",
+  "water",
+  "wind",
+  "winged",
+];
+
 const Color = {
   Reset: "\x1b[0m",
   Bright: "\x1b[1m",
@@ -80,7 +100,7 @@ function color(color, string) {
 const RESISTANCE = {
   mods: resistances,
   attr: "Elemental Attributes",
-  factor: 0.5,
+  factor: 0.1,
 };
 const ELEMENTAL = {
   mods: weaknesses,
@@ -130,7 +150,8 @@ function calculate(artes, hiddenArtes) {
   const allMoves = knapSack(
     validArtes,
     validArtes.length - 1,
-    120,
+    // 120,
+    30,
     new Map(),
     4
   );
@@ -177,7 +198,7 @@ const knapSack = (artes, n, target, lookup, moves, used = 0) => {
       knapSack(
         artes,
         n - 1,
-        target - artes[n]["SG Cost"],
+        target - artes[n]["SG Cost"] + 30,
         lookup,
         moves,
         used + 1
@@ -208,4 +229,30 @@ const knapSack = (artes, n, target, lookup, moves, used = 0) => {
   return lookup.get(key);
 };
 
+function validateInputs(input) {
+  input.forEach((value) => {
+    if (!validNames.includes(value)) {
+      console.log(color(Color.FgRed, `"${value}"`), "is not a valid name");
+    }
+  });
+}
+
+validateInputs(resistances);
+validateInputs(weaknesses);
 calculate(artes, hiddenArtes);
+
+// function parse(artes, hiddenArtes) {
+//   let allArtes = [...hiddenArtes, ...artes];
+
+//   allArtes = allArtes.reduce((prev, curr) => {
+//     return [
+//       ...prev,
+//       ...curr["Elemental Attributes"].split("\n"),
+//       ...curr["Enemy Race"].split("\n"),
+//     ];
+//   }, []);
+//   allArtes = Array.from(new Set(allArtes));
+//   // allArtes.sort()
+//   console.log(allArtes.sort());
+// }
+// parse(artes, hiddenArtes);
